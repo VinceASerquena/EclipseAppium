@@ -38,14 +38,9 @@ public class AndroidActions {
 
 	
 	public static void swipeGesture(WebElement webEle) {
-		try {
-			((JavascriptExecutor)driver).executeScript("mobile:swipeGesture", ImmutableMap.of(
-					"elementId",((RemoteWebElement)webEle).getId(),
-					"direction","left",
-					"percent",0.75));	
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
+		((JavascriptExecutor)driver).executeScript("mobile:swipeGesture", ImmutableMap.of(
+				"elementId",((RemoteWebElement)webEle).getId(),
+				"direction","left",
+				"percent",0.75));
 	}
 }
