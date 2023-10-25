@@ -45,7 +45,6 @@ public class AndroidActions {
 					"percent",0.75));	
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println(e);
 		}
 		
 	}
