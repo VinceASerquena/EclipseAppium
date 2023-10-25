@@ -1,6 +1,7 @@
 package collabera;
 
 import java.net.MalformedURLException;
+
 import org.testng.annotations.Test;
 
 import utils.AndroidActions;

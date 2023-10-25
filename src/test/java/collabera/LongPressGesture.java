@@ -19,5 +19,6 @@ public class LongPressGesture extends BaseClass {
 		
 		formPage.validateIfCorrectText(val,"Sample menu");
 		formPage.validateIfDisplayedTrue(formPage.SampleMenu);
+		
 	}
 }

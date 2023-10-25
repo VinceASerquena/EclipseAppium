@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.testng.annotations.AfterClass;
@@ -14,6 +15,7 @@ import org.testng.annotations.BeforeTest;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -43,9 +45,11 @@ public class BaseClass {
 		options.setDeviceName(deviceName);
 		options.setApp(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\ApiDemos-debug.apk");
 		driver=new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 		formPage=new FormPage(driver);
 	}
+	
 	@BeforeClass
 	public void configReports() {
 		String path=System.getProperty("user.dir")+"\\reports\\index.html";
@@ -54,7 +58,7 @@ public class BaseClass {
 		reporter.config().setDocumentTitle("Test Results");
 		extent=new ExtentReports();
 		extent.attachReporter(reporter);
-		extent.setSystemInfo("Tester", "Savita");
+		extent.setSystemInfo("Tester", "Vince");
 		test =extent.createTest("Click on View and scroll to WebView test");
 	}
 	@AfterClass

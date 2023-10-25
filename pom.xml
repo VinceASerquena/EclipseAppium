@@ -15,8 +15,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -58,11 +58,18 @@
     <version>4.14.0</version>
 </dependency>
 
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M7</version>
+</dependency>
+
+
 
 
   </dependencies>
   
-  <profiles>
+<!--  <profiles>
   
   <profile>
   <id>Regression</id>
@@ -75,7 +82,7 @@
         <version>3.0.0-M7</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>testNGSuites/testng.xml</suiteXmlFile>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
@@ -90,25 +97,25 @@
     
     <build>
     <pluginManagement>
-  <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M7</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>testNGSuites/testng_Smoke.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-</plugins>
-   </pluginManagement>
-</build>
+	  <plugins>
+	      <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-surefire-plugin</artifactId>
+	        <version>3.0.0-M7</version>
+	        <configuration>
+	          <suiteXmlFiles>
+	            <suiteXmlFile>testNGSuites/testng_Smoke.xml</suiteXmlFile>
+	          </suiteXmlFiles>
+	        </configuration>
+	      </plugin>
+	 </plugins>
+   	</pluginManagement>
+	</build>
   
-  </profile>
+    </profile>
   
   
-  </profiles>
+  </profiles> -->
   
   
   
@@ -136,7 +143,13 @@
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
+          <!-- 2.22.1-->
+          <version>3.0.0-M5</version>
+          <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>

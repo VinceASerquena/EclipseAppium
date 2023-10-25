@@ -16,5 +16,6 @@ public class SwipeGestureClass extends BaseClass {
 		 formPage.validateIfFocusableisTrue();
 		 AndroidActions.swipeGesture(formPage.firstImage);
 		 formPage.validateIfFocusableisFalse();			
+		 
 	 }
 }
